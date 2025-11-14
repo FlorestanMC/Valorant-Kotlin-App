@@ -4,7 +4,7 @@ Bienvenue sur mon application, elle a été développée en Kotlin et utilise le
 
 ## Pour commencer
 
-Ce projet est a été développé dans le cadre  du cours Android avec M. Singer. Les consignes sont simples : "développer une application mobile en Kotlin utilisant un API quelconque.
+Ce projet est a été développé dans le cadre  du cours Android avec M. Singer. Les consignes sont simples : "développer une application mobile en Kotlin utilisant un API quelconque".
 
 /////////////////////////////////
 A PRODUIRE ENCORE
@@ -89,7 +89,7 @@ Une petite flèche flottante apparaît dès que l’on scrolle suffisamment : 
 ## Fabriqué avec
 
 * [Kotlint](https://kotlinlang.org/) - Framework Android
-* [Ktor](https://ktor.io/) - Outil de gestion API et bien plus encore
+* [Ktor](https://ktor.io/) -  Outil multiplateforme pour la conception de services web
 
 ## Versions
 **Dernière version stable :** 1.0
