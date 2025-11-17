@@ -12,6 +12,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.valorantfinalkotlinapp.ui.theme.ValorantFinalKotlinAppTheme
 import com.example.valorantfinalkotlinapp.viewmodels.MainViewModel
 
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val agents by mainViewModel.agents.collectAsState()
+            val agents by mainViewModel.agents.collectAsStateWithLifecycle()
 
             ValorantFinalKotlinAppTheme {
                 Box(

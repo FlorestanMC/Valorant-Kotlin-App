@@ -31,19 +31,19 @@ class ValRepository {
         return response.data
     }
 
-    suspend fun getMaps(): List<Map> {
-        val url = "https://valorant-api.com/v1/agents"
+   // suspend fun getMaps(): List<Map> {
+     //   val url = "https://valorant-api.com/v1/agents"
         // Ktor va maintenant parser la réponse en tant qu'ApiResponse
-        val response = client.request(url).body<ApiResponse>()
+       // val response = client.request(url).body<ApiResponse>()
         // On retourne uniquement la liste d'agents qui nous intéresse
-        return response.data
-    }
+        //return response.data
+    //}
 
-    suspend fun getArmes(): List<Arme> {
-        val url = "https://valorant-api.com/v1/agents"
+   // suspend fun getArmes(): List<Arme> {
+     //   val url = "https://valorant-api.com/v1/agents"
         // Ktor va maintenant parser la réponse en tant qu'ApiResponse
-        val response = client.request(url).body<ApiResponse>()
+       // val response = client.request(url).body<ApiResponse>()
         // On retourne uniquement la liste d'agents qui nous intéresse
-        return response.data
-    }
+        //return response.data
+   // }
 }
