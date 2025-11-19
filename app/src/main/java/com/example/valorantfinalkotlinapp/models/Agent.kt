@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 // Classe qui correspond à la structure racine de la réponse JSON de l'API
 @Serializable
-data class ApiResponse(
+data class ApiResponseAgent(
     val status: Int,
     val data: List<Agent>
 )
@@ -35,3 +35,5 @@ data class AgentAbility(
     val description: String,
     val displayIcon: String? = null // Peut être nul
 )
+
+

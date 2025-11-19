@@ -25,14 +25,18 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val agents by mainViewModel.agents.collectAsStateWithLifecycle()
+            val maps by mainViewModel.maps.collectAsStateWithLifecycle()
 
             ValorantFinalKotlinAppTheme {
                 Box(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
+                    Text(text = "Il y a actuellement ${maps.size} maps sur Valorant !")
+
                     Text(text = "Il y a actuellement ${agents.size} agents sur Valorant !")
                 }
+
             }
         }
     }

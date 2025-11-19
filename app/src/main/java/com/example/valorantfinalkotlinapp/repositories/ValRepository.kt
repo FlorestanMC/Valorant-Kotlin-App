@@ -1,7 +1,9 @@
 package com.example.valorantfinalkotlinapp.repositories
 
 import com.example.valorantfinalkotlinapp.models.Agent
-import com.example.valorantfinalkotlinapp.models.ApiResponse
+import com.example.valorantfinalkotlinapp.models.Map
+import com.example.valorantfinalkotlinapp.models.ApiResponseMap
+import com.example.valorantfinalkotlinapp.models.ApiResponseAgent
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO
@@ -26,18 +28,18 @@ class ValRepository {
     suspend fun getAgents(): List<Agent> {
         val url = "https://valorant-api.com/v1/agents"
         // Ktor va maintenant parser la réponse en tant qu'ApiResponse
-        val response = client.request(url).body<ApiResponse>()
+        val response = client.request(url).body<ApiResponseAgent>()
         // On retourne uniquement la liste d'agents qui nous intéresse
         return response.data
     }
 
-   // suspend fun getMaps(): List<Map> {
-     //   val url = "https://valorant-api.com/v1/agents"
+    suspend fun getMaps(): List<Map> {
+        val url = "https://valorant-api.com/v1/agents"
         // Ktor va maintenant parser la réponse en tant qu'ApiResponse
-       // val response = client.request(url).body<ApiResponse>()
+        val response = client.request(url).body<ApiResponseMap>()
         // On retourne uniquement la liste d'agents qui nous intéresse
-        //return response.data
-    //}
+        return response.data
+    }
 
    // suspend fun getArmes(): List<Arme> {
      //   val url = "https://valorant-api.com/v1/agents"

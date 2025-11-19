@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.valorantfinalkotlinapp.models.Agent
+import com.example.valorantfinalkotlinapp.models.Map
 import com.example.valorantfinalkotlinapp.repositories.ValRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
@@ -11,6 +12,8 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
     private val repository = ValRepository()
     val agents = MutableStateFlow<List<Agent>>(emptyList()) // état pour la liste des agents
+    val maps = MutableStateFlow<List<Map>>(emptyList()) // état pour la liste des maps
+
 
     init {
         getAgents() // On récupère les agents dès la création du ViewModel
@@ -31,4 +34,21 @@ class MainViewModel : ViewModel() {
             }
         }
     }
+
+    fun getMaps() {
+        viewModelScope.launch {
+            try {
+                // On appelle la nouvelle fonction au pluriel
+                val fetchedMaps = repository.getMaps()
+                maps.value = fetchedMaps
+                // On affiche le résultat dans Logcat
+                Log.d("MainViewModel", "Correctement récupérés :  ${fetchedMaps.size} agents.")
+                Log.d("MainViewModel", "Premiere Map récupérée : ${fetchedMaps.firstOrNull()}")
+            } catch (e: Exception) {
+                // S'il y a une erreur, on l'affiche aussi
+                Log.e("MainViewModel", "Une erreur s'est produite lors du fetch des maps: ", e)
+            }
+        }
+    }
 }
+
