@@ -6,7 +6,9 @@ import androidx.lifecycle.viewModelScope
 import com.example.valorantfinalkotlinapp.models.Agent
 import com.example.valorantfinalkotlinapp.models.Map
 import com.example.valorantfinalkotlinapp.repositories.ValRepository
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
@@ -48,6 +50,12 @@ class MainViewModel : ViewModel() {
                 // S'il y a une erreur, on l'affiche aussi
                 Log.e("MainViewModel", "Une erreur s'est produite lors du fetch des maps: ", e)
             }
+        }
+    }
+
+    fun getMapByUuid(uuid: String): Flow<Map?> {
+        return maps.map { mapList ->
+            mapList.find { it.uuid == uuid }
         }
     }
 }

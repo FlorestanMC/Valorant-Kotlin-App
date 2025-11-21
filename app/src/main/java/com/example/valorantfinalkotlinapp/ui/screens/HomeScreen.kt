@@ -22,7 +22,7 @@ import com.example.valorantfinalkotlinapp.ui.components.MapCard
 import com.example.valorantfinalkotlinapp.viewmodels.MainViewModel
 
 @Composable
-fun HomeScreen(mainViewModel: MainViewModel, innerPadding: PaddingValues) {
+fun HomeScreen(mainViewModel: MainViewModel, innerPadding: PaddingValues, onMapClick: (String) -> Unit) {
     val agents by mainViewModel.agents.collectAsStateWithLifecycle()
     val maps by mainViewModel.maps.collectAsStateWithLifecycle()
 
@@ -64,7 +64,7 @@ fun HomeScreen(mainViewModel: MainViewModel, innerPadding: PaddingValues) {
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             items(maps) { valorantMap ->
-                MapCard(map = valorantMap)
+                MapCard(map = valorantMap, onClick = { onMapClick(valorantMap.uuid) })
             }
         }
     }

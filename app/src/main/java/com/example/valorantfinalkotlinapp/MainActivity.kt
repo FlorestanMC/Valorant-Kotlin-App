@@ -21,12 +21,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.valorantfinalkotlinapp.ui.screens.GameScreen
 import com.example.valorantfinalkotlinapp.ui.screens.HomeScreen
+import com.example.valorantfinalkotlinapp.ui.screens.MapDetailScreen
 import com.example.valorantfinalkotlinapp.ui.screens.StatsScreen
 import com.example.valorantfinalkotlinapp.ui.theme.ValorantFinalKotlinAppTheme
 import com.example.valorantfinalkotlinapp.viewmodels.MainViewModel
@@ -73,10 +76,27 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 ) { innerPadding ->
-                    NavHost(navController, startDestination = Screen.Home.route, modifier = Modifier.padding(innerPadding)) {
-                        composable(Screen.Home.route) { HomeScreen(mainViewModel, innerPadding) }
+                    NavHost(navController, startDestination = Screen.Home.route) { // On enlève le padding ici
+                        composable(Screen.Home.route) {
+                            HomeScreen(
+                                mainViewModel = mainViewModel,
+                                innerPadding = innerPadding,
+                                onMapClick = { mapUuid ->
+                                    navController.navigate("map_detail/$mapUuid")
+                                }
+                            )
+                        }
                         composable(Screen.Game.route) { GameScreen(mainViewModel, innerPadding) }
-                        composable(Screen.Stats.route) { StatsScreen(mainViewModel) } // On passe le ViewModel
+                        composable(Screen.Stats.route) { StatsScreen(mainViewModel) }
+                        composable(
+                            route = "map_detail/{mapUuid}",
+                            arguments = listOf(navArgument("mapUuid") { type = NavType.StringType })
+                        ) { backStackEntry ->
+                            val mapUuid = backStackEntry.arguments?.getString("mapUuid")
+                            if (mapUuid != null) {
+                                MapDetailScreen(mapUuid = mapUuid, mainViewModel = mainViewModel, navController = navController)
+                            }
+                        }
                     }
                 }
             }
