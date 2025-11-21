@@ -13,6 +13,7 @@ data class ApiResponseMap(
 data class Map(
     val uuid: String,
     val displayName: String,
-    val splash: String,
+    val narrativeDescription: String? = null, // Description pour le dos de la carte
+    val splash: String? = null,
     val displayIcon: String? = null
 )

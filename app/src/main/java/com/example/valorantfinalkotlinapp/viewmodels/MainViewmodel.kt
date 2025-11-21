@@ -10,20 +10,20 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
-    private val repository = ValRepository()
     val agents = MutableStateFlow<List<Agent>>(emptyList()) // état pour la liste des agents
     val maps = MutableStateFlow<List<Map>>(emptyList()) // état pour la liste des maps
 
 
     init {
         getAgents() // On récupère les agents dès la création du ViewModel
+        getMaps() // On récupère les maps dès la création du ViewModel
     }
 
     fun getAgents() {
         viewModelScope.launch {
             try {
                 // On appelle la nouvelle fonction au pluriel
-                val fetchedAgents = repository.getAgents()
+                val fetchedAgents = ValRepository.getAgents()
                 agents.value = fetchedAgents
                 // On affiche le résultat dans Logcat
                 Log.d("MainViewModel", "Correctement récupérés :  ${fetchedAgents.size} agents.")
@@ -39,7 +39,7 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 // On appelle la nouvelle fonction au pluriel
-                val fetchedMaps = repository.getMaps()
+                val fetchedMaps = ValRepository.getMaps()
                 maps.value = fetchedMaps
                 // On affiche le résultat dans Logcat
                 Log.d("MainViewModel", "Correctement récupérés :  ${fetchedMaps.size} agents.")
@@ -51,4 +51,3 @@ class MainViewModel : ViewModel() {
         }
     }
 }
-
