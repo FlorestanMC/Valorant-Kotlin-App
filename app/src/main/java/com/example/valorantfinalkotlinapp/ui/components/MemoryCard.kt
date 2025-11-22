@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.valorantfinalkotlinapp.ui.screens.MemoryGameCard
@@ -32,7 +33,8 @@ fun MemoryCard(card: MemoryGameCard, onClick: () -> Unit) {
                 rotationY = rotation
                 cameraDistance = 8 * density
             }
-            .clickable(onClick = onClick, enabled = !card.isFlipped),
+            .clickable(onClick = onClick, enabled = !card.isFlipped)
+            .testTag("memory_card_${card.id}"),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         if (rotation < 90f) {
