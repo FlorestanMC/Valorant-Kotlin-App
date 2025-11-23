@@ -2,89 +2,79 @@
 
 Bienvenue sur mon application, elle a été développée en Kotlin et utilise le Valorant - API répertoriant la majorité des données à propos du jeu lien [ici](https://valorant-api.com/)
 
-## Pour commencer
+📘 Documentation de l’application
 
-Ce projet est a été développé dans le cadre  du cours Android avec M. Singer. Les consignes sont simples : "développer une application mobile en Kotlin utilisant un API quelconque".
+### 🏠 Écran Home (Accueil)
+L’écran d’accueil propose deux carrousels distincts permettant une navigation rapide et intuitive :
+1. Carrousel des personnages
 
-/////////////////////////////////
-A PRODUIRE ENCORE
-/////////////////////////////////
+Contient tous les personnages du jeu.  
+Défilement horizontal fluide.  
+Permet d’accéder rapidement aux informations visuelles concernant chaque agent.
 
-## Fonctionnalités Page d'accueil
-### - Header
+2. Carrousel des maps
 
-#### Barre de recherche interactive
+Contient toutes les cartes disponibles.  
+Chaque carte est cliquable.  
+Une fois sélectionnée, l’utilisateur peut zoomer sur le plan.
+Le zoom permet de voir le nom exact de chaque zone de la carte (callouts).
 
-/////////////////////////////////
 
-#### Accès Admin sécurisé
+### 🎮 Écran Jeu (Memory)
+Cet écran propose un jeu de memory basé sur les personnages.
+Fonctionnalités principales
 
-/////////////////////////////////
+Cartes du memory représentant les personnages du jeu.
+Compteur de coups : indique le nombre d’essais effectués.
+Bouton “Recommencer” : permet de réinitialiser la partie instantanément.
+Animation de fin de partie, réalisée via des plugins (ex : Konfetti).
+Gestion fluide de la logique du jeu : découverte des cartes, paires, redémarrage.
 
-### - Main
 
-/////////////////////////////////
+### 📊 Écran Stats (Statistiques)
+Cet écran affiche toutes les statistiques du joueur liées à ses parties.
+Données affichées
 
-#### Affichage de la liste avec données récupérées via API :
+Nombre total de coups joués sur toutes les parties.
+Temps total passé sur le jeu.
+Agent le plus récurrent sur l’ensemble des parties.
+Historique complet des parties (score, date, coups…).
 
-/////////////////////////////////
-Dénomination
-Quantité
-Forme
-Image
-Gestion de la recherche
-/////////////////////////////////
+Caractéristiques techniques
 
-Aucun résultat ? Un message adapté s’affiche + bouton pour réinitialiser la recherche.
+Les données ne sont jamais réinitialisées, même après fermeture de l’application.
+Elles sont stockées via le local storage.
 
-Navigation améliorée
-Une petite flèche flottante apparaît dès que l’on scrolle suffisamment : cliquez pour remonter en haut de la page !
 
-## Fonctionnalités Page Admin
-### - Header
+### 🎰 Écran Jeu / Casino
+Un second type de jeu est disponible : un système d’ouverture de boîtes (lootboxes) pour obtenir de nouveaux skins.
+Fonctionnement
 
-#### Barre de recherche interactive
+L’utilisateur ouvre des boîtes.
+Chaque boîte donne un nouveau skin de manière aléatoire.
+Le skin obtenu est automatiquement enregistré dans l’espace Collection.
 
-S’affiche de façon élégante au survol dans le header.
-Recherche envoyée au clavier (Entrée) ou en cliquant sur la loupe.
-Défilement smooth vers la liste des résultats après une recherche.
 
-#### Accès Accueil
+### 🗂️ Écran Collection
+Cet écran regroupe tous les skins d’armes obtenus via l’écran Casino.
+Fonctionnalités
 
-Un bouton dédié pour revenir sur la page accueil
+Affichage de tous les skins débloqués.
+Possibilité de trier :
+par arme,
+par collection.
 
-### - Main
 
-Gestion avancée des médicaments
+Interface claire et organisée pour parcourir les skins obtenus.
 
-#### Ajout d’un médicament
 
-Ajout facile via une modale dédiée.
-Saisie de toutes les informations nécessaires.
-Tableau interactif des médicaments
+### ✨ Animations & Plugins
+L’application propose plusieurs animations pour enrichir l’expérience utilisateur :
 
-Affichage de tous les médicaments avec leurs informations clés.
-Actions rapides sur chaque médicament :
-+ : Ajouter 1 à la quantité disponible.
-– : Retirer 1 à la quantité disponible.
-
-⚠️ On ne peut pas retirer 1 à la quantité de médicament si celle ci est déjà à 1. On ne peut pas non modifier la quantité de médicaments en dessous de 1
-
-#### Modification d’un médicament
-
-Un bouton Modifier ouvre une modale pré-remplie avec les anciennes informations, pour ajuster facilement le nom, la quantité, la forme, ou l’image.
-Suppression d’un médicament
-
-Un bouton Supprimer pour retirer définitivement un médicament de la base.
-
-#### Sécurité & retours
-Modales et feedbacks clairs : messages de succès, erreurs ou confirmations.
-Accès restreint : seules les personnes authentifiées peuvent utiliser ces actions. ( Via une variable localStorage )
-
-Aucun résultat ? Un message adapté s’affiche + bouton pour réinitialiser la recherche.
-
-Navigation améliorée
-Une petite flèche flottante apparaît dès que l’on scrolle suffisamment : cliquez pour remonter en haut de la page !
+Utilisation de plugins comme Konfetti pour :
+les victoires en memory,
+l’ouverture de boîtes dans le casino,
+d’autres moments clés de l’application.
 
 ## Fabriqué avec
 
