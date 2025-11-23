@@ -4,11 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.valorantfinalkotlinapp.models.Skin
 
-@Database(entities = [GameStat::class], version = 2, exportSchema = false) // On passe à la version 2
+@Database(entities = [GameStat::class, Skin::class], version = 5, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun gameStatDao(): GameStatDao
+    abstract fun skinDao(): SkinDao
 
     companion object {
         @Volatile
@@ -21,7 +23,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "app_database"
                 )
-                .fallbackToDestructiveMigration() // On gère la migration
+                .fallbackToDestructiveMigration()
                 .build()
                 INSTANCE = instance
                 instance

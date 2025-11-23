@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+    Base application theme for the splash screen.
+    This theme is what the app uses while the splash screen is being displayed.
+    -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background, animated icon, and destination theme. -->
+        <item name="windowSplashScreenBackground">@android:color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/valorant_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.ValorantFinalKotlinApp</item>
+    </style>
 
-    <style name="Theme.ValorantFinalKotlinApp" parent="android:Theme.Material.Light.NoActionBar" />
+    <!--
+    Base application theme after the splash screen.
+    This is a standard theme that will be applied to the Activity after the splash screen.
+    Your Compose theme will then take over.
+    -->
+    <style name="Theme.ValorantFinalKotlinApp" parent="android:Theme.DeviceDefault.NoActionBar" />
 </resources>
