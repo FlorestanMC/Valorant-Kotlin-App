@@ -8,11 +8,11 @@ Bienvenue sur mon application, elle a été développée en Kotlin et utilise le
 *   **Détail d'une carte :** Pour chaque carte, l'application présente une vue détaillée qui inclut :
     *   L'image de la carte (`displayIcon`).
     *   L'affichage des "callouts" (noms des zones) positionnés directement sur l'image.
-*   **Jeu Memory** On retrouve en premier jeu un petit memory avec pour cartes les personnages du jeu. Le nombre de coup et le temps passé pour le résoudre est comptabilisé et j'ai également mis en place une petite animation de victoire.
-*   **Espace Statistiques Memory** Une fois une partie effectuée on retrouve sur cette pages l'historique des parties, le temps passé en moyenne, nombre de coup et l'agent tombant le plus lors des parties jouées.
-*   **Jeu ouverture de caisse** A l'instar du jeu Counter Strike Global Offensive, Valorant contient énormément de contenu visuel additionnel aussi appelés skins, j'ai donc mis en place une sorte de mini lotterie faisant gagner à l'utilisateur un "skin" aléatoirement. Comme les statistiques du mémory, ces données sont conservées dans la bdd locale de l'application.
-*   **Espace Inventaire Skins** Tous les skins gagnés lors du jeu d'ouverture de caisse sont conservés dans cette page. On peut également les trier par type d'arme ou par collection de skins.
-*   **Tests IHM** J'ai également fait des tests IHM avec l'aide de Gemini pour vérifier que les éléments de la page Home étaient affichés ou encore que le Memory s'initialisait bien et cela fonctionne particulièrement bien!
+*   **Jeu Memory:** On retrouve en premier jeu un petit memory avec pour cartes les personnages du jeu. Le nombre de coup et le temps passé pour le résoudre est comptabilisé et j'ai également mis en place une petite animation de victoire.
+*   **Espace Statistiques Memory:** Une fois une partie effectuée on retrouve sur cette pages l'historique des parties, le temps passé en moyenne, nombre de coup et l'agent tombant le plus lors des parties jouées.
+*   **Jeu ouverture de caisse:** A l'instar du jeu Counter Strike Global Offensive, Valorant contient énormément de contenu visuel additionnel aussi appelés skins, j'ai donc mis en place une sorte de mini lotterie faisant gagner à l'utilisateur un "skin" aléatoirement. Comme les statistiques du mémory, ces données sont conservées dans la bdd locale de l'application.
+*   **Espace Inventaire Skins:** Tous les skins gagnés lors du jeu d'ouverture de caisse sont conservés dans cette page. On peut également les trier par type d'arme ou par collection de skins.
+*   **Tests IHM:** J'ai également fait des tests IHM avec l'aide de Gemini pour vérifier que les éléments de la page Home étaient affichés ou encore que le Memory s'initialisait bien et cela fonctionne particulièrement bien!
 
 
 ## Architecture
