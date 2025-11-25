@@ -12,7 +12,7 @@ Bienvenue sur mon application, elle a été développée en Kotlin et utilise le
 *   **Espace Statistiques Memory** Une fois une partie effectuée on retrouve sur cette pages l'historique des parties, le temps passé en moyenne, nombre de coup et l'agent tombant le plus lors des parties jouées.
 *   **Jeu ouverture de caisse** A l'instar du jeu Counter Strike Global Offensive, Valorant contient énormément de contenu visuel additionnel aussi appelés skins, j'ai donc mis en place une sorte de mini lotterie faisant gagner à l'utilisateur un "skin" aléatoirement. Comme les statistiques du mémory, ces données sont conservées dans la bdd locale de l'application.
 *   **Espace Inventaire Skins** Tous les skins gagnés lors du jeu d'ouverture de caisse sont conservés dans cette page. On peut également les trier par type d'arme ou par collection de skins.
-
+*   **Tests IHM** J'ai également fait des tests IHM avec l'aide de Gemini pour vérifier que les éléments de la page Home étaient affichés ou encore que le Memory s'initialisait bien et cela fonctionne particulièrement bien!
 
 
 ## Architecture
